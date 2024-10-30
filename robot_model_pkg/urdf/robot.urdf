@@ -1,0 +1,28 @@
+<robot name="differential_drive_robot">
+
+<link name="body_link">
+	<visual>
+		<geometry>
+			<box size="1 0.6 0.3"/>
+		</geometry>
+	<origin rpy="-1.57 0 0" xyz="0 0 0"/>
+	</visual>
+</link>
+
+<joint name="camera" type="fixed" >
+	<parent link="body_link"/>
+	<child  link="camera" />
+	<origin rpy="0 0 0" xyz="0 0 1"/>
+</joint> 
+
+<link name="camera">
+	<visual>
+		<origin rpy="0 0 0" xyz="0 0 1"/>
+		<geometry>
+			<box size="0.1 0.02 0.02" />
+		</geometry>
+	</visual>
+
+
+</link>
+</robot>
