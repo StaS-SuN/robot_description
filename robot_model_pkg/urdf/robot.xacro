@@ -169,7 +169,7 @@
 <joint name="camera" type="fixed" >
 	<parent link="body_link"/>
 	<child  link="camera" />
-	<origin rpy="0 0 1.57" xyz="0 0 0.08"/>
+	<origin rpy="0 0 0" xyz="0 0 0.08"/>
 </joint>
 
 <link name="camera">
@@ -183,11 +183,9 @@
 	<collision>
 		<origin rpy="0 0 0" xyz="0 0 1"/>
 		<geometry>
-			<box size="0.1 0.02 0.02" />
+			<box size="0.02 0.1 0.02" />
 		</geometry>
 	</collision>
 
 </link>
-
-
 </robot>
