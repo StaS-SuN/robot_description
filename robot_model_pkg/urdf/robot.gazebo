@@ -58,6 +58,48 @@
 
 
 </gazebo>
+<gazebo reference="hokuyo_link">
+    <sensor type="ray" name="lds_lfcd_sensor">
+    <pose>0 0 0 0 0 0</pose>
+    <visualize>true</visualize>
+    <update_rate>5</update_rate>
+    <ray>
+        <scan>
+            <horizontal>
+                <samples>360</samples>
+                <resolution>1</resolution>
+                <min_angle>0.0</min_angle>
+                <max_angle>6.28319</max_angle>
+            </horizontal>
+        </scan>
+        <range>
+            <min>0.120</min>
+            <max>7</max>
+            <resolution>0.015</resolution>
+        </range>
+        <noise>
+            <type>gaussian</type>
+            <mean>0.0</mean>
+            <stddev>0.01</stddev>
+        </noise>
+        </ray>
+    <plugin name="gazebo_ros_lds_lfcd_controller" filename="libgazebo_ros_laser.so">
+        <topicName>scan</topicName>
+        <frameName>hokuyo_link</frameName>
+    </plugin>
+    </sensor>
+ </gazebo>
+
+ <gazebo>
+ <plugin name="base_controller" filename="libgazebo_ros_planar_move.so">
+
+ <commandTopic>cmd_vel</commandTopic>
+ <odometryTopic>odom</odometryTopic>
+ <odometryFrame>odom</odometryFrame>
+ <odometryRate>100.0</odometryRate>
+ <robotBaseFrame>dummy</robotBaseFrame>
+ </plugin>
+ </gazebo>
 
 <gazebo reference="camera">
 <sensor type="camera" name="Pi Camera">
@@ -90,4 +132,5 @@
     </plugin>
 </sensor>
 </gazebo>
+
 </robot>
