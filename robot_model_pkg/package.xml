@@ -63,6 +63,11 @@
   <exec_depend>gazebo_ros_control</exec_depend>
 
 
+  <depend>urdf</depend>
+  <depend>xacro</depend>
+
+
+
   <!-- The export tag contains other, unspecified, tags -->
   <export>
     <!-- Other tools can request additional information be placed here -->

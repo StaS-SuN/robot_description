@@ -12,6 +12,16 @@ find_package(catkin REQUIRED COMPONENTS
   gazebo_plugins
   gazebo_ros
   gazebo_ros_control
+  urdf
+  xacro
+)
+
+catkin_package(
+  CATKIN_DEPENDS urdf xacro
+)
+
+install(DIRECTORY meshes urdf
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )
 
 ## System dependencies are found with CMake's conventions
