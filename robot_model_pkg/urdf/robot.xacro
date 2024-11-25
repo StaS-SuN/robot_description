@@ -226,4 +226,21 @@
 		</geometry>
  	</visual>
 </link>
+
+<joint name="wheel_test_j" type="fixed" >
+	<parent link="body_link"/>
+	<child  link="wheel_test_l" />
+	<origin xyz="0 0 1" rpy="0 0 0" />
+</joint>
+
+<link name="wheel_test_l">
+	<visual>
+		<origin rpy="1.570795 0 0" xyz="0 0 0"/>
+		<geometry>
+			
+			<mesh filename="package://robot_model_pkg/meshes/wheel.stl"/> 
+		</geometry>
+	</visual>	
+</link>
+
 </robot>
